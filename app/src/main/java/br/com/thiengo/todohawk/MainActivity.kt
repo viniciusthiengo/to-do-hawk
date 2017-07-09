@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
-import br.com.thiengo.todohawk.data.Mock
 import br.com.thiengo.todohawk.domain.ToDo
 import br.com.thiengo.todohawk.fragment.TaskDialogFragment
 import com.orhanobut.hawk.Hawk
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun initList() {
         Hawk.init(this).build()
         if (Hawk.count() == 0L) {
-            Hawk.put(ToDo.TO_DO_LIST_KEY, Mock().getToDoList())
+            Hawk.put(ToDo.TO_DO_LIST_KEY, list)
         }
 
         list.addAll( Hawk.get(ToDo.TO_DO_LIST_KEY) )
