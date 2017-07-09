@@ -65,7 +65,7 @@ class ToDoAdapter(
             val ma = (context as MainActivity)
 
             if( !ma.isRecyclerAnimating() ){
-                ma.removeFromRecycler( adapterPosition )
+                ma.removeFromList( adapterPosition )
             }
             else{
                 (checkBox as CheckBox).isChecked = false

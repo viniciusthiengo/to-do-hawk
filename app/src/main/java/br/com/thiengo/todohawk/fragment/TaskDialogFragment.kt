@@ -64,7 +64,7 @@ class TaskDialogFragment :
             sp_priority.selectedItemPosition
         )
 
-        (activity as MainActivity).addToRecycler( toDo )
+        (activity as MainActivity).addToList( toDo )
         dismiss()
     }
 

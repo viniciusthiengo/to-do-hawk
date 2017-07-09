@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         dialog.show(ft, TaskDialogFragment.KEY)
     }
 
-    fun addToRecycler( toDo: ToDo ){
+    fun addToList(toDo: ToDo ){
         list.add( toDo )
         list.sortWith(
             compareBy<ToDo>{it.getDateTimeInSeconds()}
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         rv_todo.adapter.notifyItemInserted( list.indexOf( toDo ) )
     }
 
-    fun removeFromRecycler( position: Int ){
+    fun removeFromList(position: Int ){
         list.removeAt( position )
         Hawk.put(ToDo.TO_DO_LIST_KEY, list)
         rv_todo.adapter.notifyItemRemoved( position )
