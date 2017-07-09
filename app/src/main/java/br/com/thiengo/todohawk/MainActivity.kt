@@ -72,7 +72,11 @@ class MainActivity : AppCompatActivity() {
 
     fun addToRecycler( toDo: ToDo ){
         list.add( toDo )
-        list.sortWith(compareBy<ToDo>{it.getDateTimeInSeconds()}.thenByDescending{it.priority}.thenBy{it.duration})
+        list.sortWith(
+            compareBy<ToDo>{it.getDateTimeInSeconds()}
+                .thenByDescending{it.priority}
+                .thenBy{it.duration}
+        )
         Hawk.put(ToDo.TO_DO_LIST_KEY, list)
         rv_todo.adapter.notifyItemInserted( list.indexOf( toDo ) )
     }
@@ -83,5 +87,5 @@ class MainActivity : AppCompatActivity() {
         rv_todo.adapter.notifyItemRemoved( position )
     }
 
-    fun isReclyclerAnimating() = rv_todo.isAnimating || rv_todo.isComputingLayout
+    fun isRecyclerAnimating() = rv_todo.isAnimating || rv_todo.isComputingLayout
 }

@@ -32,7 +32,10 @@ class TaskDialogFragment :
         return dialog
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+            inflater: LayoutInflater?,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater!!.inflate(R.layout.fragment_dialog_task, null, false)
     }
@@ -67,7 +70,12 @@ class TaskDialogFragment :
 
     private fun getSelectedYear() = (sp_years.selectedView as TextView).text.toString().toInt()
 
-    override fun onItemSelected(parentView: AdapterView<*>?, view: View?, position: Int, id: Long) {
+    override fun onItemSelected(
+            parentView: AdapterView<*>?,
+            view: View?,
+            position: Int,
+            id: Long) {
+
         var arrayDays = getArrayDaysResource( position )
         val adapter = ArrayAdapter.createFromResource(
             activity,

@@ -64,7 +64,7 @@ class ToDoAdapter(
         override fun onCheckedChanged(checkBox: CompoundButton?, status: Boolean) {
             val ma = (context as MainActivity)
 
-            if( !ma.isReclyclerAnimating() ){
+            if( !ma.isRecyclerAnimating() ){
                 ma.removeFromRecycler( adapterPosition )
             }
             else{

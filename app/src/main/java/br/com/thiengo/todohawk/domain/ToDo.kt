@@ -4,7 +4,11 @@ import br.com.thiengo.todohawk.R
 import java.util.*
 
 
-data class ToDo(val date: Long, val task: String, val duration : Int, val priority: Int) {
+data class ToDo(
+        val date: Long,
+        val task: String,
+        val duration : Int,
+        val priority: Int) {
 
     companion object{
         @JvmField val TO_DO_LIST_KEY = "to_do_list"
@@ -42,5 +46,4 @@ data class ToDo(val date: Long, val task: String, val duration : Int, val priori
         else{
             R.drawable.ic_priority_high
         }
-
 }
