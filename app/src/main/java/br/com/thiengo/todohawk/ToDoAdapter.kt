@@ -17,6 +17,7 @@ class ToDoAdapter(
         private val toDoList: List<ToDo>) :
         RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {
 
+
     override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int) : ToDoAdapter.ViewHolder {
@@ -28,16 +29,21 @@ class ToDoAdapter(
         return ViewHolder(v)
     }
 
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setData(toDoList[position])
     }
+
 
     override fun getItemCount(): Int {
         return toDoList.size
     }
 
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), CompoundButton.OnCheckedChangeListener {
+    inner class ViewHolder(itemView: View) :
+            RecyclerView.ViewHolder(itemView),
+            CompoundButton.OnCheckedChangeListener {
+
         var ivPriority: ImageView
         var tvDate: TextView
         var tvTask: TextView
@@ -55,7 +61,7 @@ class ToDoAdapter(
 
         fun setData(toDo: ToDo) {
             ivPriority.setImageResource( toDo.getPriorityIcon() )
-            tvDate.text = toDo.getDateTimeFormatado()
+            tvDate.text = toDo.getDateFormatted()
             tvTask.text = toDo.task
             tvDuration.text = context.resources.getStringArray(R.array.durations)[toDo.duration]
             cbDone.isChecked = false
@@ -64,7 +70,7 @@ class ToDoAdapter(
         override fun onCheckedChanged(checkBox: CompoundButton?, status: Boolean) {
             val ma = (context as MainActivity)
 
-            if( !ma.isRecyclerAnimating() ){
+            if( !ma.isRecyclerAnimationg() ){
                 ma.removeFromList( adapterPosition )
             }
             else{

@@ -10,11 +10,12 @@ data class ToDo(
         val duration : Int,
         val priority: Int) {
 
-    companion object{
+    companion object {
         @JvmField val TO_DO_LIST_KEY = "to_do_list"
     }
 
-    fun getDateTimeFormatado(): String{
+
+    fun getDateFormatted(): String{
         val calendar = Calendar.getInstance()
         calendar.timeInMillis = date
 
@@ -26,7 +27,9 @@ data class ToDo(
         return date.replace("\n", "").replace(" ", "").trim()
     }
 
-    fun getDateTimeInSeconds() = date / 1000
+
+    fun getDateInSeconds() = date / 1000
+
 
     private fun getNumDate( num: Int )
         = if( num < 10 ){
@@ -35,6 +38,7 @@ data class ToDo(
         else{
             "$num"
         }
+
 
     fun getPriorityIcon()
         = if( priority == 1 ){

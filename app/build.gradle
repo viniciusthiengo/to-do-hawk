@@ -30,6 +30,8 @@ dependencies {
     compile 'com.android.support:design:26.+'
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    /* HAWK LIBRARY */
     compile 'com.orhanobut:hawk:2.0.1'
 }
 repositories {
