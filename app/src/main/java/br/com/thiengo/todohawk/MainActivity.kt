@@ -76,9 +76,9 @@ class MainActivity : AppCompatActivity() {
     fun addToList(toDo: ToDo ){
         list.add( toDo )
         list.sortWith(
-            compareBy<ToDo>{toDoParam -> toDoParam.getDateInSeconds()}
-                .thenByDescending {toDoParam -> toDoParam.priority }
-                .thenBy{toDoParam -> toDoParam.duration }
+            compareBy<ToDo>{ it.getDateInSeconds() }
+                .thenByDescending { it.priority }
+                .thenBy{ it.duration }
         )
         Hawk.put( ToDo.TO_DO_LIST_KEY, list )
         rv_todo.adapter.notifyItemInserted( list.indexOf( toDo ) )
