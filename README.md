@@ -8,7 +8,7 @@ Artigo que discute em detalhes a Hawk API. API que tem como proposta:
 
 <img src="https://www.thiengo.com.br/img/post/normal/j4p67590ehso4fq970d4a3g317a2e2b685620a2dd61e930ff88e8b2c22.jpg" width="586" alt="Segurança e Persistência Android com a Biblioteca Hawk">
 
-O conteúdo do artigo também está disponível em [vídeos](https://www.thiengo.com.br/seguranca-e-persistencia-android-com-a-biblioteca-hawk#title-24).
+O conteúdo do artigo também está disponível em [vídeo](https://www.thiengo.com.br/seguranca-e-persistencia-android-com-a-biblioteca-hawk#title-24).
 
 ### Primeira parte
 
